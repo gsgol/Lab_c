@@ -15,7 +15,7 @@ struct Person
     int month;
     int year;
     bool operator > (const Person& p) const {
-        return this->Last_Name < p.Last_Name && this->Name < p.Name && this->Patronymic<p.Patronymic && this->day > p.day && this->month > p.month && this->year > p.year;
+        return this->day > p.day && this->month > p.month && this->year > p.year && this->Last_Name < p.Last_Name && this->Name < p.Name && this->Patronymic<p.Patronymic ;
     }
 };
 
@@ -116,6 +116,39 @@ void InsertionPeopleSort(Person array[], int N)
     }
 }
 
+int main()
+{
+    Person a;
+    Person b;
+    Person c;
+    a.Last_Name = 'a';
+    a.Name = 'a';
+    a.Patronymic = 'a';
+    a.day = 1;
+    a.month = 1;
+    a.year = 1;
+    b.Last_Name = 'b';
+    b.Name = 'b';
+    b.Patronymic = 'b';
+    b.day = 2;
+    b.month = 2;
+    b.year = 2;
+    c.Last_Name = 'c';
+    c.Name = 'c';
+    c.Patronymic = 'c';
+    c.day = 0;
+    c.month = 0;
+    c.year = 0;
+    Person arr[3] = { a,b,c };
+    InsertionPeopleSort(arr, 3);
+    for (int i = 0; i < 3; ++i)
+    {
+        cout << arr[i].Name << ' ';
+    }
 
 
+
+    
+    
+}
 
