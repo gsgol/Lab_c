@@ -2,20 +2,28 @@
 //
 //Задача 8
 #include <iostream>
-#include <algorithm>
 using namespace std;
-bool funct(int a, int b)
-{
-    return a > b;
-}
 int main()
 {
-    int a[8] = { -3,8,6,-9,-8,5,-10,23 };
-    sort(a, a + 8, funct);
-    for (int i = 0; i < 8; ++i)
-    {
-        cout << a[i] << ' ';
-    }
+    int a[8];
+	for (int i = 0; i < 8; i++) {
+		cin >> a[i]; 
+	}
+
+	for (int i = 0; i < 8; i++) {
+		for (int j = 0; j < 7; j++) {
+			if (a[j] < a[j + 1]) {
+				int b = a[j]; 
+				a[j] = a[j + 1]; 
+				a[j + 1] = b; 
+			}
+		}
+	}
+	for (int i = 0; i < 8; i++) {
+		cout << a[i] << ' ' ;
+	}
+
+
 }
 // Точки с координатами
 #include <iostream>
