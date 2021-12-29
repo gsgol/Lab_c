@@ -37,8 +37,14 @@ double distance(int x1, int y1, int x2, int y2)
 }
 int main()
 {
-	int x[6] = { 2,3,4,5,6,7 };
-	int y[6] = { 1,8,7,9,6,2 };
+	int x[6];
+	int y[6];
+	for (int i = 0; i < 6; ++i)
+	{
+		cin >> x[i];
+		cin >> y[i];
+	}
+
 	double dist[6][6];
 	double min = distance(x[1], y[1], x[2], y[2]), max = -1;
 	int min_1_id = 1, min_2_id = 2, max_id = -1;
